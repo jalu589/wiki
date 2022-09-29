@@ -13,7 +13,7 @@ h1 {
 }
 
 textarea {
-    height: 90vh;
+    height: 70vh;
     width: 80%;
 }
 
@@ -36,3 +36,16 @@ textarea {
 .sidebar h2 {
     margin-top: 5px;
 }
+
+#create-title,
+#edit-title {
+    margin-bottom: 15px;
+}
+
+button {
+    border: none;
+    padding: 4px 20px;
+    background-color: #f0f0f0;
+    display: block;
+}
+

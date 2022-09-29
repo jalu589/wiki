@@ -1,5 +1,4 @@
 import re
-
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 
@@ -22,7 +21,7 @@ def save_entry(title, content):
     filename = f"entries/{title}.md"
     if default_storage.exists(filename):
         default_storage.delete(filename)
-    default_storage.save(filename, ContentFile(content))
+    default_storage.save(filename, ContentFile(content.encode('ascii')))
 
 
 def get_entry(title):
@@ -35,3 +34,21 @@ def get_entry(title):
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None
+
+
+def search_entries(value):
+    """
+    Searches the list of existing entry pages for possible
+    matches containing the search value
+    """
+    entries = list_entries()
+    matches = []
+    for entry in entries:
+        if value in entry:
+            matches.append(entry)
+    
+    if len(matches) > 0:
+        return matches
+    else:
+        return None
+

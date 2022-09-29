@@ -1,0 +1,12 @@
+{% extends "encyclopedia/layout.html" %}
+{% load markdownify %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block body %}
+    {{ text|markdownify }}
+    <form action="/edit">
+        <input type="hidden" name="page-title" value="{{ title }}">
+        <input type="hidden" name="page-content" value="{{ text }}">
+        <button>Edit</button>
+    </form>
+{% endblock %}

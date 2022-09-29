@@ -1,0 +1,3 @@
+# Computer
+
+A computer is a digital electronic machine that can be programmed to carry out sequences of arithmetic or logical operations (computation) automatically.
