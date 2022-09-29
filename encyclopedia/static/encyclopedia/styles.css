@@ -49,3 +49,11 @@ button {
     display: block;
 }
 
+.entry {
+    float: left;
+    clear: both;
+}
+
+a:hover {
+    text-decoration: none;
+}
