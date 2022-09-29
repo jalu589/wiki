@@ -2,6 +2,7 @@ from http.client import HTTPResponse
 from imaplib import Time2Internaldate
 from django.shortcuts import render
 from . import util
+import random
 
 
 def index(request):
@@ -73,3 +74,8 @@ def edit(request):
     else:
         return render(request, "encyclopedia/edit.html")
 
+
+def random_page(request):
+    entries = util.list_entries()
+    title = random.choice(entries)
+    return entry(request, title)
